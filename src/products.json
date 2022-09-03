@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "image": "https://raw.githubusercontent.com/MilanLizriadi/pbx-shop/main/image/product/minyak-angin.png",
+    "name": "Minyak Angin Sagha, Minyak Herbal",
+    "price": "Rp. 70.000",
+    "location": "Bekasi"
+  },
+  {
+    "id": 2,
+    "image": "https://raw.githubusercontent.com/MilanLizriadi/pbx-shop/main/image/product/5.png",
+    "name": "Kentang",
+    "price": "Rp. 20.000",
+    "location": "Bandung"
+  },
+  {
+    "id": 3,
+    "image": "https://raw.githubusercontent.com/MilanLizriadi/pbx-shop/main/image/product/7.png",
+    "name": "Wortel",
+    "price": "Rp. 18.500",
+    "location": "Bandung"
+  },
+  {
+    "id": 4,
+    "image": "https://raw.githubusercontent.com/MilanLizriadi/pbx-shop/main/image/product/6.png",
+    "name": "Alpukat",
+    "price": "Rp. 45.000",
+    "location": "Jakarta"
+  },
+  {
+    "id": 5,
+    "image": "https://raw.githubusercontent.com/MilanLizriadi/pbx-shop/main/image/product/8.png",
+    "name": "Lemon Hijau",
+    "price": "Rp. 22.500",
+    "location": "Jakarta"
+  }
+]

@@ -24,8 +24,8 @@
     </div>
 
     <form class="search-form">
-      <input type="search" id="search-box" placeholder="search here..." />
-      <label for="search-box" class="fas fa-search"></label>
+      <input type="search" id="search" placeholder="search here..." />
+      <label for="search" class="fas fa-search"></label>
     </form>
 
     <!-- <div class="shopping-cart">

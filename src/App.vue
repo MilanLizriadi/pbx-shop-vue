@@ -1,4 +1,18 @@
-<script setup></script>
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      items: [],
+    };
+  },
+
+  mounted() {
+    axios.get("https://6301bf91e71700618a3cb07e.mockapi.io/products").then((response) => (this.items = response.data));
+  },
+};
+</script>
 
 <template>
   <!-- header section starts  -->
@@ -10,21 +24,17 @@
 
     <nav class="navbar" style="display: block">
       <a href="#home">Beranda</a>
-      <!-- <a href="#about">Tentang</a> -->
       <a href="#features">Jasa</a>
       <a href="#products">Produk</a>
-      <!-- <a href="#categories">Categories</a> -->
     </nav>
 
     <div class="icons">
       <div class="fas fa-bars" id="menu-btn"></div>
       <div class="fas fa-search" id="search-btn"></div>
-      <!-- <div class="fas fa-shopping-cart" id="cart-btn"></div> -->
-      <!-- <div class="fas fa-user" id="login-btn"></div> -->
     </div>
 
     <form class="search-form">
-      <input type="search" id="search" placeholder="search here..." />
+      <input type="search" id="search" placeholder="search here..." autocomplete="off" />
       <label for="search" class="fas fa-search"></label>
     </form>
 
@@ -122,106 +132,15 @@
 
     <div class="swiper product-slider">
       <div class="swiper-wrapper">
-        <div class="swiper-slide box">
-          <img src="src/image/product/sappo.png" />
-          <h3>Sappo</h3>
-          <div class="price">Rp 190.00</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
+        <div class="swiper-slide box" v-for="(item, index) in items">
+          <img src="{{ item.image }}" />
+          <h3>{{ item.name }}</h3>
+          <div class="price">{{ item.price }}</div>
+          <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            {{ item.location }}
           </div>
           <a href="https://wa.link/70iwgt" target="_blank" class="btn">Kontak Penjual</a>
-        </div>
-
-        <div class="swiper-slide box">
-          <img src="src/image/product/sammo.png" />
-          <h3>Sammo</h3>
-          <div class="price">Rp 190.000</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-          <a href="https://wa.link/70iwgt" target="_blank" class="btn">Kontak Penjual</a>
-        </div>
-
-        <div class="swiper-slide box">
-          <img src="src/image/product/minyak-angin.png" />
-          <h3>Minyak Angin Sagha</h3>
-          <div class="price">Rp 70.000</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <a href="https://wa.link/70iwgt" target="_blank" class="btn">Kontak Penjual</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="swiper product-slider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide box">
-          <img src="src/image/product/5.png" />
-          <h3>Kentang Segar</h3>
-          <div class="price">$4.99/- - 10.99/-</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-          <a href="#products" target="_blank" class="btn">Kontak Penjual</a>
-        </div>
-
-        <div class="swiper-slide box">
-          <img src="src/image/product/6.png" />
-          <h3>Alpukat Segar</h3>
-          <div class="price">$4.99/- - 10.99/-</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-          <a href="#products" target="_blank" class="btn">Kontak Penjual</a>
-        </div>
-
-        <div class="swiper-slide box">
-          <img src="src/image/product/7.png" />
-          <h3>Wortel Segar</h3>
-          <div class="price">$4.99/- - 10.99/-</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-          <a href="#products" target="_blank" class="btn">Kontak Penjual</a>
-        </div>
-
-        <div class="swiper-slide box">
-          <img src="src/image/product/8.png" />
-          <h3>Lemon Hijau</h3>
-          <div class="price">$4.99/- - 10.99/-</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-          <a href="#products" target="_blank" class="btn">Kontak Penjual</a>
         </div>
       </div>
     </div>
